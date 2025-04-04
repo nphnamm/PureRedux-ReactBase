@@ -17,7 +17,7 @@ import {
 } from "../components/ui/tabs";
 
 import { Eye, EyeOff, Loader2 } from "lucide-react";
-import { useEffect, useState, ChangeEvent, FormEvent } from "react";
+import { useEffect, useState, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
@@ -59,9 +59,8 @@ const Login = () => {
   const [validationErrors, setValidationErrors] = useState<ValidationErrors>({});
 
   const dispatch = useDispatch<AppDispatch>();
-  const { isLoading } = useSelector((state: RootState) => state.auth as { isLoading: boolean });
-  const { loading: loginIsLoading , success: loginSuccess } = useSelector(
-    (state: RootState) => state.login as { loading: boolean , success: boolean }
+  const { loading: loginIsLoading, success: loginSuccess } = useSelector(
+    (state: RootState) => state.login as { loading: boolean, success: boolean }
   );
   const { loading: registerIsLoading , success: registerSuccess } = useSelector(
     (state: RootState) => state.register as { loading: boolean , success: boolean }
@@ -137,6 +136,7 @@ const Login = () => {
             password: loginInput.password,
           })
         );
+        
       }
     } catch (error) {
       console.error("Authentication error:", error);

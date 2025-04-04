@@ -14,11 +14,6 @@ const initialState : AuthState= {
   isLogoutSuccess: false,
 };
 
-type AuthAction = AnyAction & {
-  type: "LOAD_USER_SUCCESS" | "LOAD_USER_FAIL" | "LOGOUT";
-  payload?: any;
-}
-
 export const authReducer = (state = initialState, action: AnyAction): AuthState => {
   switch (action.type) {
     case "LOAD_USER_SUCCESS":

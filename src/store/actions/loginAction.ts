@@ -24,14 +24,7 @@ interface UserLoginDataRequest {
   email: string;
   password: string;
 }
-interface UserLoginDataResponse {
-  user: {
-    username: string;
-    email: string;
-    phone: string;
-    address: string;
-  };
-}
+
 export const loginUser =
   (userData: UserLoginDataRequest) => async (dispatch: Dispatch) => {
     try {

@@ -1,4 +1,4 @@
-import { Menu, School } from "lucide-react";
+import { Menu } from "lucide-react";
 import React, { useEffect, useState, FormEvent } from "react";
 import {
   DropdownMenu,
@@ -28,7 +28,6 @@ import { useSelector } from "react-redux";
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
 } from "./ui/navigation-menu";
 import { Input } from "@/components/ui/input";
@@ -47,9 +46,9 @@ interface AuthState {
   };
 }
 
-interface LogoutResponse {
-  message?: string;
-}
+// interface LogoutResponse {
+//   message?: string;
+// }
 
 interface MobileNavbarProps {
   user: User | null;

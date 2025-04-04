@@ -3,15 +3,6 @@ import axios from "axios";
 
 const USER_API = "http://localhost:8080/api/v1/user/";
 
-interface Error {
-  response?: {
-    data?: {
-      message?: string;
-    };
-  };
-}
-
-
 interface LoadUserSuccessPayload {
   username: string;
   email: string;
