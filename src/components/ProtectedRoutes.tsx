@@ -17,7 +17,7 @@ export const ProtectedRoutes: React.FC<RouteProps> = ({ children }) => {
 
 export const AuthenticatedUser: React.FC<RouteProps> = ({ children }) => {
   const { isAuthenticated } = useSelector((state: RootState) => state.auth);
-  if (isAuthenticated) {
+  if (!isAuthenticated) {
     return <Navigate to="/" />;
   }
   return <>{children}</>;

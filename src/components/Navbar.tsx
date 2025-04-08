@@ -112,7 +112,7 @@ const Navbar: React.FC = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link
-                    to="ai"
+                    to="chat"
                     className="hidden md:block font-semibold flex items-center gap-2 py-2 p-4 rounded-xl hover:bg-[#e7e7e7]"
                   >
                     Chat With AI

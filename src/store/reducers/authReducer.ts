@@ -1,6 +1,6 @@
 import { AnyAction } from 'redux';
 
-interface AuthState {
+export interface AuthState {
     user: any;
     isAuthenticated: boolean;
     isLoading: boolean;
@@ -16,9 +16,14 @@ const initialState : AuthState= {
 
 export const authReducer = (state = initialState, action: AnyAction): AuthState => {
   switch (action.type) {
+    case "LOAD_USER_REQUEST":
+      return {...state,isLoading:true}
     case "LOAD_USER_SUCCESS":
-      return { ...state, user: action.payload, isAuthenticated: true };
-    case "LOAD_USER_FAIL":
+      return { ...state, user: action.payload, isAuthenticated: true,isLoading:false };
+    
+      case "LOAD_USER_FAIL":
+      return {...state,isLoading:false}
+
     case "LOGOUT":
       return { ...state, user: null, isAuthenticated: false, isLogoutSuccess: true };
     default:

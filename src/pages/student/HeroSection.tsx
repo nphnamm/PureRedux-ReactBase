@@ -3,6 +3,8 @@ import { Button } from "../../components/ui/button";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
 
 const HeroSection: React.FC = () => {
   const [url, setUrl] = useState("");
@@ -10,6 +12,8 @@ const HeroSection: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [isSuccess, setIsSuccess] = useState(false);
+  const { isAuthenticated } = useSelector((state: RootState) => state.auth);
+  console.log('1',isAuthenticated)
   // const handleDownload = async () => {
   //   if (!url) return alert("Please enter a YouTube URL");
 

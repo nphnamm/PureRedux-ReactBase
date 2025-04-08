@@ -1,6 +1,6 @@
 import { Dispatch } from "@reduxjs/toolkit";
 import axios from "axios";
-const USER_API = "http://localhost:8080/api/v1/user/";
+const USER_API = "http://localhost:8000/api/v1/user/";
 
 export const LoginRequest = () => ({ type: "LOGIN_REQUEST" });
 

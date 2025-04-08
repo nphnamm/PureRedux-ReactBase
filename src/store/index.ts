@@ -4,12 +4,13 @@ import { loginReducer } from './reducers/loginReducer';
 import { signUpReducer } from './reducers/signupReducer';
 import { authReducer } from './reducers/authReducer';
 import { loadUser } from './actions/authActions';
-
+import { conversationReducer } from './reducers/conversationActions';
 const store = configureStore({
   reducer: {
     login: loginReducer as any,
     register: signUpReducer as any,
     auth: authReducer,
+    conversation: conversationReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(withExtraArgument({})),
